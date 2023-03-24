@@ -1,13 +1,13 @@
 - 
-  name: Deploy a web application
-  host: db_and_web_server
-  tasks:
-    - name: Install dependencies
-      apt: name={{ item }} state=present
-      with_items:
-        - python
-        - python-setuptools
-        - python-dev
-        - build-essential
-        - python-pip
-        - python-mysqldb
+  name: Deploy a mysql DB
+  host: db_server
+  roles:
+    - python
+    - mysql_db
+
+- 
+  name: Deploy a web server
+  host: web_server
+  roles:
+    - python
+    - flask_web
