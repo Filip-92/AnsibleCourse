@@ -11,3 +11,6 @@
         - build-essential
         - python-pip
         - python-mysqldb
+        
+    - include: tasks/deploy_db.yml
+    - include: tasks/deploy_web.yml
